@@ -58,6 +58,21 @@ docker-compose up -d
 
 ---
 
+Для проверки отправки уведомлений на почту останавливаем nginx на ВМ CMS
+
+В Prometheus наблюдаем срабоотавший алерт о недоступности страниц CMS
+
+![dz3-s3](https://github.com/user-attachments/assets/67b7fee3-2722-4371-8251-29d80123402c)
+
+На почту пришло письмо с уведомлением о недоступности страниц CMS
+
+![dz3-s4](https://github.com/user-attachments/assets/6bab2dd5-acc0-4a81-904f-96d0a1ab10c0)
+
+Запускаем nginx на ВМ CMS, на почту пришло письмо о восстановлении доступности страниц CMS
+
+![dz3-s5](https://github.com/user-attachments/assets/298dc59e-c752-4aed-85f9-7be5031f8515)
+
+
 
 
 
