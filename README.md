@@ -18,3 +18,5 @@ nginx, php-fpm, database (MySQL)
 
 После этого создадим канал alert_otusdz3_chat в Telegram, куда будут приходить алерты. Добавляем бота в этот канал и выдаем ему права администратора. 
 
+Выясним chat_id, отправив /start своему боту и по запросу https://api.telegram.org/bot<ТОКЕН_БОТА>/getUpdates. Значение result[0]message.chat.id показывает chat_id
+
