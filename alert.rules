@@ -1,0 +1,23 @@
+groups:
+- name: test_telegram
+  rules:
+  - alert: PrometheusTargetMissing
+    expr: up == 0
+    for: 0m
+    labels:
+      severity: Critical
+    annotations:
+      summary: "Prometheus target missing (instance {{ $labels.instance }})"
+      description: "A Prometheus target has disappeared. An exporter might be crashed. VALUE = {{ $value }}  LABELS: {{ $labels }}"
+
+- name: test_email
+  rules:
+  - alert: ExampleSiteDown
+    expr: probe_success == 0
+    for: 10s
+    labels:
+      severity: Warning
+    annotations:
+      summary: "Example site is down"
+      description: "The site {{ $labels.instance }} is not responding."
+

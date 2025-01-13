@@ -1,0 +1,38 @@
+global:
+ resolve_timeout: 5m
+ telegram_api_url: "https://api.telegram.org"
+route:
+ group_by: ['severity'] # Алерты группируются по severity.
+ group_wait: 15s
+ group_interval: 30s
+ repeat_interval: 12h
+ receiver: 'telegram-test'
+ routes:
+ - match_re:
+     severity: Warning
+   receiver: 'mail-test'
+   continue: true
+ - match_re:
+     severity: Critical
+   receiver: 'telegram-test'
+   continue: true
+receivers:
+ - name: blackhole
+ - name: telegram-test
+   telegram_configs:
+    - chat_id: -4570053925
+      bot_token: 7426544627:AAHWqdOGSbxux8LoLAhLvXi_lbn_bcyigvw
+      api_url: "https://api.telegram.org"
+      send_resolved: true
+ - name: mail-test
+   email_configs:
+    - to: 'test-otus2000@yandex.ru'
+      from: 'test-otus2001@yandex.ru'
+      smarthost: smtp.yandex.ru:587
+      auth_username: 'test-otus2001@yandex.ru'
+      auth_identity: 'test-otus2001@yandex.ru'
+      auth_password: 'syksghjhjhmbnuddkgk'
+      send_resolved: true
+      headers:
+        Subject: '[WARNING] {{ .CommonLabels.alertname }}'
+
