@@ -16,3 +16,5 @@ nginx, php-fpm, database (MySQL)
 С помощью @BotFather создаем бота @alertOtusDZ3bot с именем учетной записи prometheus_alert_dz.
 Получаем bot_token бота.
 
+После этого создадим канал alert_otusdz3_chat в Telegram, куда будут приходить алерты. Добавляем бота в этот канал и выдаем ему права администратора. 
+
