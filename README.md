@@ -11,12 +11,20 @@ nginx, php-fpm, database (MySQL)
 
 Оповещения будет выполнять AlertManager, который интегрируется с Prometheus.
 
-С помощью бота @my_id_bot определяем наш наш идентификатор.
-
 С помощью @BotFather создаем бота @alertOtusDZ3bot с именем учетной записи prometheus_alert_dz.
 Получаем bot_token бота.
 
 После этого создадим канал alert_otusdz3_chat в Telegram, куда будут приходить алерты. Добавляем бота в этот канал и выдаем ему права администратора. 
 
 Выясним chat_id, отправив /start своему боту и по запросу https://api.telegram.org/bot<ТОКЕН_БОТА>/getUpdates. Значение result[0]message.chat.id показывает chat_id
+
+---
+
+В файле docker-compose.yml настраиваем конфигурацию для запуска alertmanager в контейнере.
+
+В конфигурацию prometheus.yml добавляем файл alert.rules с описанием правил оповещения.
+
+Также в этот файл добавляем , что сервер мониторинга должен использовать в качестве системы оповещения alertmanager, который доступен по адресу alertmanager:9093
+
+
 
