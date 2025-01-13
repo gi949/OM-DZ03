@@ -11,3 +11,8 @@ nginx, php-fpm, database (MySQL)
 
 Оповещения будет выполнять AlertManager, который интегрируется с Prometheus.
 
+С помощью бота @my_id_bot определяем наш наш идентификатор.
+
+С помощью @BotFather создаем бота @alertOtusDZ3bot с именем учетной записи prometheus_alert_dz.
+Получаем bot_token бота.
+
