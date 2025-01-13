@@ -44,6 +44,22 @@ docker-compose up -d
 
 ![dz3-s6](https://github.com/user-attachments/assets/6d66ef54-7f10-4cc3-974c-8ee9f8beadf8)
 
+---
+
+Для проверки отправки уведомлений в телеграмм останавливаем node_exporter на ВМ CMS
+
+В Prometheus наблюдаем срабоотавший алерт о недоступности node_exporter
+
+![dz3-s1](https://github.com/user-attachments/assets/95890aa3-4c90-4580-9b54-04dc2c83a3cd)
+
+В телеграмм пришло уведомление об алерте. Запускаем node_exporter и видим уведомление о восстановлении
+
+![dz3-s2](https://github.com/user-attachments/assets/a4bc7b32-65d6-4fa1-a965-497e01c8f311)
+
+---
+
+
+
 
 
 
